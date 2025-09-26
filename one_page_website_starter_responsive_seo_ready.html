@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dualCTRL — DJs brought to the next level</title>
+  <meta name="description" content="dualCTRL DJs — two‑DJ performances for unforgettable events. Now serving Arizona.">
+  <meta name="theme-color" content="#e11d2a" />
+  <!-- Social -->
+  <meta property="og:title" content="dualCTRL — DJs brought to the next level" />
+  <meta property="og:description" content="Two‑DJ concept. Clean transitions. Big energy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
+  <style>
+    :root{
+      --bg:#000;           /* black */
+      --panel:#0a0a0a;     /* near-black */
+      --text:#ffffff;      /* white */
+      --muted:#bdbdbd;     /* grey */
+      --accent:#e11d2a;    /* red */
+      --accent-2:#ff4747;  /* bright red */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    a{color:var(--text);text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 22px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.7);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:44px;height:44px;border-radius:999px;background:#111;object-fit:contain}
+    .brand .name{font-weight:900;letter-spacing:.02em;text-transform:uppercase}
+    .tag{font-size:12px;color:var(--muted)}
+    nav a{opacity:.88;margin-left:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;background:var(--accent);color:#fff;font-weight:800;letter-spacing:.02em;box-shadow:0 10px 24px rgba(225,29,42,.35);border:1px solid rgba(255,255,255,.08)}
+    .btn:hover{filter:brightness(1.05)}
+    .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18)}
+
+    /* Hero */
+    .hero{padding:110px 0 80px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    h1{font-size:clamp(40px,7vw,72px);line-height:1.02;margin:10px 0 10px;font-weight:900}
+    .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:60ch}
+    .hero-card{background:radial-gradient(900px 420px at 50% 0%, rgba(225,29,42,.18), transparent 60%), var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .hero-img{width:100%;aspect-ratio:4/3;border-radius:14px;object-fit:cover;border:1px solid rgba(255,255,255,.08);background:#000}
+
+    /* Marquee */
+    .marquee-wrap{overflow:hidden;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);background:#050505}
+    .marquee{display:flex;gap:32px;white-space:nowrap;animation:scroll 18s linear infinite;padding:16px 0;font-weight:900;font-size:clamp(22px,4vw,42px);letter-spacing:.04em}
+    .marquee span{display:inline-flex;align-items:center;gap:14px;opacity:.95}
+    .dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(225,29,42,.15)}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+
+    /* Sections */
+    section{padding:80px 0}
+    h2{font-size:clamp(28px,4.5vw,40px);margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+
+    /* Portfolio */
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .video{position:relative;background:#000;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden}
+    .video iframe,.video video{width:100%;height:100%;aspect-ratio:16/9;display:block}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+
+    /* Contact */
+    form{display:grid;gap:14px;margin-top:10px}
+    input,textarea{background:#0c0c0c;border:1px solid rgba(255,255,255,.14);color:var(--text);padding:12px 14px;border-radius:12px;outline:none}
+    input:focus,textarea:focus{box-shadow:0 0 0 6px rgba(225,29,42,.25)}
+    textarea{min-height:120px}
+
+    footer{padding:44px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.08)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .video-grid{grid-template-columns:1fr 1fr}
+      header nav a.link{display:none}
+    }
+    @media (max-width: 560px){
+      .video-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
+  <header aria-label="Main">
+    <div class="container nav">
+      <div class="brand">
+        <!-- Replace src with your uploaded logo path -->
+        <img src="d - 3.PNG" alt="dualCTRL logo" />
+        <div>
+          <div class="name">dualCTRL</div>
+          <div class="tag">DJs brought to the next level</div>
+        </div>
+      </div>
+      <nav>
+        <a class="link" href="#work">Portfolio</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="btn" href="#contact">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Ready to make some noise?</h1>
+          <p class="lead">Skill unmatched. Atmosphere unmatched. Hype unmatched. DJs that challenge perfection to make any event unforgettable.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+            <a class="btn" href="#contact">Book Now</a>
+            <a class="btn ghost" href="#work">See the vibe</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img class="hero-img" src="https://images.unsplash.com/photo-1534996858221-380b92700493?q=80&w=1200&auto=format&fit=crop" alt="DJ booth and crowd" />
+          <p class="muted" style="margin:10px 0 0">Swap this image or embed a short hero video loop.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="container">
+        <div class="marquee">
+          <span>CTRL THE NIGHT <i class="dot"></i> CTRL THE NIGHT <i class="dot"></i> CTRL THE NIGHT <i class="dot"></i> CTRL THE NIGHT <i class="dot"></i></span>
+          <span>CTRL THE NIGHT <i class="dot"></i> CTRL THE NIGHT <i class="dot"></i> CTRL THE NIGHT <i class="dot"></i> CTRL THE NIGHT <i class="dot"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <section id="work">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p class="muted">Drop in your videos (MP4/WebM) or paste YouTube/Instagram links—we'll embed them cleanly.</p>
+        <div class="video-grid" style="margin-top:14px">
+          <!-- Example embeds; replace with your real links -->
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="dualCTRL set 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="dualCTRL set 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="video">
+            <video controls preload="metadata" poster="https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1200&auto=format&fit=crop">
+              <source src="videos/dualctrl-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container about">
+        <div>
+          <h2>About Us</h2>
+          <p class="muted">At DualCTRL DJs, we specialize in providing top-tier DJ services for your events and parties. Our innovative two-DJ concept ensures seamless entertainment and unforgettable experiences that resonate with every guest.</p>
+          <p class="muted">Having relocated from Austin to Arizona, we bring our unique talent and reliability to a new audience. We’re dedicated to showcasing our expertise through each gig and promotion, striving for excellence.</p>
+          <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+            <a class="btn" href="#contact">Request a quote</a>
+            <a class="btn ghost" href="#work">Watch clips</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">What we bring</h3>
+          <ul class="muted" style="margin:0 0 8px 16px">
+            <li>Two‑DJ format for nonstop flow</li>
+            <li>Club‑level mixing & MC when needed</li>
+            <li>Pro audio & lighting packages</li>
+            <li>Clean edits available</li>
+          </ul>
+          <h3 style="margin:12px 0 8px">Genres</h3>
+          <p class="muted">EDM · House · Hip‑Hop · Top 40 · Latin · Throwbacks</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Book dualCTRL</h2>
+        <p class="muted">Prefer email? <a href="mailto:booking@dualctrl.com" style="color:var(--accent)">booking@dualctrl.com</a>. Or send a quick message here:</p>
+        <form name="contact" onsubmit="return handleSubmit(event)" aria-label="Contact form">
+          <input name="name" placeholder="Your name" aria-label="Your name" required>
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+          <textarea name="message" placeholder="Event date, venue, vibe, and any must‑plays" aria-label="Your message" required></textarea>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button class="btn" type="submit">Send</button>
+            <span class="muted" id="form-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> dualCTRL. All rights reserved. · <a href="#" style="color:var(--accent)">Privacy</a></small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function handleSubmit(e){
+      e.preventDefault();
+      const s = document.getElementById('form-status');
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      // TODO: Replace with Formspree/Getform/Basin endpoint
+      s.textContent = 'Thanks! Your message has been queued.';
+      e.target.reset();
+      console.log('Form data:', data);
+      return false;
+    }
+  </script>
+</body>
+</html>
